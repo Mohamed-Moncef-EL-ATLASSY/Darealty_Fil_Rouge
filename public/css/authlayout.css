@@ -1,0 +1,19 @@
+.login,
+.image {
+    min-height: 100vh;
+}
+
+.bg-image {
+    background-image: url('/images/auth.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 20px;
+}
+
+.login {
+    color: white;
+}
+
+.bg {
+    background-color: #1D4743;
+}
