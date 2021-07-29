@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\admin\adminAuth\AdminLoginController;
+use App\Http\Controllers\admin\adminMain\DashboardController;
 use App\Http\Controllers\auth\LoginController;
 use App\Http\Controllers\auth\RegisterController;
 use App\Http\Controllers\main\FindController;
@@ -23,4 +25,20 @@ Route::get('/list', [ListController::class, 'index'] )->name('list');
 
 //Find your property
 Route::get('/find', [FindController::class, 'index'] )->name('find');
+
+
+
+
+
+
+
+
+
+
+//Admin {
+Route::get('/admin/login', [AdminLoginController::class, 'index'] )->name('admin.login');
+Route::get('/admin/dashboard', [DashboardController::class, 'index'] )->name('admin.dashboard');
+
+
+// }
 

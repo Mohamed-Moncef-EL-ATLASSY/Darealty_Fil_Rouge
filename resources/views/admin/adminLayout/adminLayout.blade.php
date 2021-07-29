@@ -41,7 +41,6 @@
                         </li>
                     </ul>
 
-
                     <div class="d-flex justify-content-around">
                         <button type="button" class="btn btn-danger">Log Out</button>
                     </div>
