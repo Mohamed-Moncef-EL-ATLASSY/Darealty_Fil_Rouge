@@ -13,7 +13,7 @@
 
 </head>
 <body>
-    <link href="{{ URL::asset('css/authLayout.css') }}" rel="stylesheet">
+    <link href="{{ URL::asset('css/adminAuthLayout.css') }}" rel="stylesheet">
 
     <main>
         <div class="container-fluid">

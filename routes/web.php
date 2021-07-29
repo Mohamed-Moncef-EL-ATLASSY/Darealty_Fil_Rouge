@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\admin\adminAuth\AdminLoginController;
+use App\Http\Controllers\admin\auth\AdminAuthController;
 use App\Http\Controllers\admin\adminMain\DashboardController;
 use App\Http\Controllers\auth\LoginController;
 use App\Http\Controllers\auth\RegisterController;
@@ -36,7 +36,12 @@ Route::get('/find', [FindController::class, 'index'] )->name('find');
 
 
 //Admin {
-Route::get('/admin/login', [AdminLoginController::class, 'index'] )->name('admin.login');
+Route::get('/admin/login', [AdminAuthController::class, 'index'] )->name('admin.login');
+Route::get('/admin/register', [AdminAuthController::class, 'renderRegister'] )->name('admin.register');
+Route::post('/admin/login', [AdminAuthController::class, 'login'] )->name('admin.login');
+Route::post('/admin/register', [AdminAuthController::class, 'register'] )->name('admin.register');
+
+
 Route::get('/admin/dashboard', [DashboardController::class, 'index'] )->name('admin.dashboard');
 
 
