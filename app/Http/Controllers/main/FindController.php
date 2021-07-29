@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class FindController extends Controller
 {
-    public function index(){
+    public function userFindRender(){
         return view('main.find');
     }
 }

@@ -31,13 +31,13 @@
                 <div class="collapse navbar-collapse text-center" id="navbarCollapse">
                     <ul class="navbar-nav me-auto mb-2 mb-md-0">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="{{ route ('home') }}">Home</a>
+                            <a class="nav-link active" aria-current="page" href="{{ route ('userHomeRender') }}">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="{{ route ('list') }}">List your property</a>
+                            <a class="nav-link active" aria-current="page" href="{{ route ('userListRender') }}">List your property</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="{{ route ('find') }}">Find your property</a>
+                            <a class="nav-link active" aria-current="page" href="{{ route ('userFindRender') }}">Find your property</a>
                         </li>
                     </ul>
 

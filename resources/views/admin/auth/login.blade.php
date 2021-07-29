@@ -11,7 +11,7 @@
                     <div class="col-lg-10 col-xl-7 mx-auto">
                         <h1>Admin Log In</h1>
                         <h4 class="mb-2">Welcome back!</h4>
-                        <form action="{{ route('admin.login') }}" method="post">
+                        <form action="{{ route('adminLogin') }}" method="post">
                             @csrf
                             <div class="form-group mb-3">
                                 <input name="email" required id="email" type="email" placeholder="Email address" autofocus="" class="form-control border-0 shadow-sm px-4">

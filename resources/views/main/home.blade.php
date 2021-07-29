@@ -1,7 +1,9 @@
-@extends('layouts.mainlayout')
+@extends('layouts.userMainlayout')
 
 @section('content')
 
 
 Home
+
+
 @endsection

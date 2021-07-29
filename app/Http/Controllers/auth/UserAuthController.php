@@ -7,30 +7,29 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 
-class RegisterController extends Controller
+class UserAuthController extends Controller
 {
-    public function index() {
+    public function userRenderLogin() {
+        return view('auth.login');
+    }
+
+    public function userRenderRegister() {
         return view('auth.register');
     }
 
-    public function register(Request $request) {
-        $role = "user";
-
+    public function userRegister(Request $request) {
         //Validation
         $this->validate($request, [
             'name'      => 'required|min:3|max:255',
             'email'     => 'required|email',
             'password' => 'required|confirmed',
-            'role' => 'required',
         ]);
 
         //Store user
         User::create([
-            dd($request)
-            // 'name'     => $request->name,
-            // 'email'    => $request->email,
-            // 'role'     => $role,
-            // 'password' => Hash::make($request->password),
+            'name'     => $request->name,
+            'email'    => $request->email,
+            'password' => Hash::make($request->password),
         ]);
 
 

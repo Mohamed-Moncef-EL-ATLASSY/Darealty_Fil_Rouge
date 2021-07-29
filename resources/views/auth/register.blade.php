@@ -1,4 +1,4 @@
-@extends('layouts.authlayout')
+@extends('layouts.userAuthlayout')
 
 @section('content')
 
@@ -14,7 +14,7 @@
                     <h4 class="mb-2">Welcome to Darealty!</h4>
                     <h5 class="mb-4"><u>Register to Darealty to customize your searches and see your account
                             details.</u></h5>
-                    <form action="{{ route('register') }}" method="post">
+                    <form action="/" method="post">
 
                         @csrf
 
@@ -55,12 +55,9 @@
                         </div>
 
                         <button class="w-100 btn btn-lg btn-primary mb-3" type="submit" name="submit">Sign up</button>
-
+                        <a href="{{ route('userLoginRender') }}" class="w-100 btn btn-lg btn-dark">Already have an account?</a>
                     </form>
 
-                    <form action="{{ route('login') }}" method="head">
-                        <button href="{{route('login')}}" class="w-100 btn btn-lg btn-dark" name="login">Already have an account?</button>
-                    </form>
                     <p class="mt-5 mb-3 text-center">&copy; Darealty</p>
 
                 </div>

@@ -9,16 +9,15 @@ use Illuminate\Support\Facades\Hash;
 
 class AdminAuthController extends Controller
 {
-    public function renderLogin() {
+    public function adminRenderLogin() {
         return view('admin.auth.login');
     }
 
-    public function renderRegister() {
+    public function adminRenderRegister() {
         return view('admin.auth.register');
     }
 
-    public function login(Request $request)
-    {
+    public function adminLogin(Request $request) {
         $request->validate([
             'email'     => 'required|email|exists:admins,email',
             'password' => 'required',
@@ -32,24 +31,20 @@ class AdminAuthController extends Controller
         }
     }
 
-    public function register(Request $request) {
-        //Validation
-        $this->validate($request, [
-            'name'      => 'required|min:3|max:255',
-            'email'     => 'required|email|unique:admins,email',
-            'password' => 'required|confirmed',
-        ]);
+    // public function AdminRegister(Request $request) {
+    //     //Validation
+    //     $this->validate($request, [
+    //         'name'      => 'required|min:3|max:255',
+    //         'email'     => 'required|email|unique:admins,email',
+    //         'password' => 'required|confirmed',
+    //     ]);
 
-        //Store user
-        Admin::create([
-            'name'     => $request->name,
-            'email'    => $request->email,
-            'password' => Hash::make($request->password),
-        ]);
+    //     //Store user
+    //     Admin::create([
+    //         'name'     => $request->name,
+    //         'email'    => $request->email,
+    //         'password' => Hash::make($request->password),
+    //     ]);
 
-
-        //Sign the user in
-
-        //Redirect
-    }
+    // }
 }

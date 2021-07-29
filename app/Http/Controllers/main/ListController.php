@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class ListController extends Controller
 {
-    public function index(){
+    public function userListRender(){
         return view('main.list');
     }
 }
