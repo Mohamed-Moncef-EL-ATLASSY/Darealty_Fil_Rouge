@@ -2,13 +2,19 @@
 
 namespace App\Http\Controllers\admin\auth;
 
-use App\Http\Controllers\Controller;
 use App\Models\Admin;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
+use Symfony\Component\Console\Input\Input;
 
 class AdminAuthController extends Controller
 {
+    public function __construct() {
+        $this->middleware(['guest']);
+    }
+
     public function adminRenderLogin() {
         return view('admin.auth.login');
     }
@@ -19,17 +25,35 @@ class AdminAuthController extends Controller
 
     public function adminLogin(Request $request) {
         $request->validate([
-            'email'     => 'required|email|exists:admins,email',
+            'email'    => 'required|email|exists:admins,email',
             'password' => 'required',
         ]);
 
         $admin = Admin::where(['email' => $request->email])->first();
-        //first(): brings out the first existing input from the database
 
-        if ($admin && Hash::check($request->password, $admin->password)) {
-            dd('logged in');
+        if ($admin &&  strcmp('Admin' , $admin->password) ==0 ) {
+        //Redirect
+        return redirect()->route('adminDashboardRender');
         }
+
+        else {
+            return back()->with('password_status', 'Invalid password entry');
+        }
+
+
     }
+
+    public function adminLogout() {
+
+        auth()->logout();
+
+        return redirect()->route('userLoginRender');
+    }
+
+}
+
+
+
 
     // public function AdminRegister(Request $request) {
     //     //Validation
@@ -45,6 +69,4 @@ class AdminAuthController extends Controller
     //         'email'    => $request->email,
     //         'password' => Hash::make($request->password),
     //     ]);
-
     // }
-}

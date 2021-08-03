@@ -24,28 +24,14 @@
                 <a href="#" class="navbar-brand d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
                     <img src="{{ URL::asset('images/logo.png') }}" alt="Darealty" width="75" height="75"> </a>
                 </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
-                    aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse text-center" id="navbarCollapse">
-                    <ul class="navbar-nav me-auto mb-2 mb-md-0">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="{{ route ('home') }}">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="{{ route ('list') }}">List your property</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="{{ route ('find') }}">Find your property</a>
-                        </li>
-                    </ul>
 
-                    <div class="d-flex justify-content-around">
-                        <button type="button" class="btn btn-danger">Log Out</button>
-                    </div>
-
+                {{-- @auth
+                <div class="d-flex justify-content-around">
+                    <li><a href="" class="p-3 text-dark fs-4">Hello, {{auth()->user()->name}}!</a></li>
+                    <a href="{{ route('adminLogout') }}" class="btn btn-danger">Log Out</a>
                 </div>
+                @endauth --}}
+
             </div>
         </nav>
 

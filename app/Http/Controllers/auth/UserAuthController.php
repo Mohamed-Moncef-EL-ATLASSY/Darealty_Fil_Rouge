@@ -7,8 +7,8 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 
-class UserAuthController extends Controller
-{
+class UserAuthController extends Controller {
+
     public function userRenderLogin() {
         return view('auth.login');
     }
@@ -21,8 +21,8 @@ class UserAuthController extends Controller
         //Validation
         $this->validate($request, [
             'name'      => 'required|min:3|max:255',
-            'email'     => 'required|email',
-            'password' => 'required|confirmed',
+            'email'     => 'required|email|unique:users,email',
+            'password'  => 'required|confirmed',
         ]);
 
         //Store user
@@ -34,7 +34,30 @@ class UserAuthController extends Controller
 
 
         //Sign the user in
+        auth()->attempt($request->only('email', 'password'));
 
         //Redirect
+        return redirect()->route('userHomeRender');
+    }
+
+    public function userLogin(Request $request) {
+        $request->validate([
+            'email'    => 'required|email|exists:users,email',
+            'password' => 'required',
+        ]);
+
+        if (!auth()->attempt($request->only('email','password'), $request->remember)) {
+            return back()->with('password_status', 'Invalid password entry');
+        }
+
+        //Redirect
+        return redirect()->route('userHomeRender');
+    }
+
+    public function userLogout() {
+
+        auth()->logout();
+
+        return redirect()->route('userLoginRender');
     }
 }

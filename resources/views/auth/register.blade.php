@@ -12,12 +12,11 @@
                 <div class="col-lg-10 col-xl-7 mx-auto">
                     <h1>Register</h1>
                     <h4 class="mb-2">Welcome to Darealty!</h4>
-                    <h5 class="mb-4"><u>Register to Darealty to customize your searches and see your account
-                            details.</u></h5>
-                    <form action="/" method="post">
+                    <h5 class="mb-4"><u>Register to Darealty to customize your searches and see your account details.</u></h5>
+
+                    <form action="{{ route('userRegister') }}" method="post">
 
                         @csrf
-
                         <div class="form-group mb-3">
                             <input id="name" name="name" type="text" placeholder="Full Name" autofocus="" class="form-control border-2 shadow-sm px-4 @error('name') border border-danger @enderror" value="{{ old('name') }}">
                             @error('name')
