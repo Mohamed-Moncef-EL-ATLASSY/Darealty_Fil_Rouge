@@ -10,7 +10,8 @@ use App\Models\Listing;
 class HomeController extends Controller
 {
     public function userHomeRender(){
-        $listings = Listing::get();
+        $listings = Listing::paginate(5);
+
         return view('main.home', [
             'listings' => $listings
         ]);

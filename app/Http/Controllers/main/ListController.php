@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers\main;
 
+use App\Models\Region;
 use App\Models\Listing;
+use App\Models\EstateType;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
@@ -15,11 +17,18 @@ class ListController extends Controller
 
 
     public function userListRender(){
-        // $region = region::get();
+        $regions = Region::get();
+        $estate_types = EstateType::get();
 
-        return view('main.list');
+        return view('main.list', [
+            'regions' => $regions,
+            'estate_type' => $estate_types
+        ]);
     }
 
+    public function listing(){
+        return $this->belongsTo(Listing::class);
+    }
 
 
     public function listProperty(Request $request) {
@@ -50,20 +59,6 @@ class ListController extends Controller
         ]);
 
         return redirect()->route('userHomeRender');
-
-        // Listing::create([
-        //     'estate_type'        => $request->estate_type,
-        //     'estate_city'        => $request->estate_city,
-        //     'estate_bedrooms'    => $request->estate_bedrooms,
-        //     'estate_bathrooms'   => $request->estate_bathrooms,
-        //     'estate_surface'     => $request->estate_surface,
-        //     'estate_age'         => $request->estate_age,
-        //     'estate_title'       => $request->estate_title,
-        //     'estate_price'       => $request->estate_price,
-        //     'estate_thumbnail'   => $request->estate_thumbnail,
-        //     'estate_description' => $request->estate_description,
-        // ]);
-
     }
 }
 

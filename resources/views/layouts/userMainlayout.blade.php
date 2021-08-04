@@ -21,7 +21,7 @@
 
 </head>
 
-<body class="bg-light my-3">
+<body class="bg-light mt-4">
     <header class="p-3 text-white bg-white ">
 
         <nav class="navbar navbar-expand-md navbar-light fixed-top bg-white">
@@ -80,7 +80,7 @@
     </div>
 
     <footer class="text-center text-lg-start bg-white text-muted ">
-        <section class="p-4 border-bottom">
+        <section class="p-2 border-bottom">
         </section>
 
         <!-- Section: Links  -->
