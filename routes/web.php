@@ -6,6 +6,7 @@ use App\Http\Controllers\admin\adminMain\DashboardController;
 use App\Http\Controllers\main\FindController;
 use App\Http\Controllers\main\HomeController;
 use App\Http\Controllers\main\ListController;
+use App\Http\Controllers\main\myPropertiesController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -27,12 +28,8 @@ Route::get('/logout', [UserAuthController::class, 'userLogout'] )->name('userLog
 Route::get('/list', [ListController::class, 'userListRender'] )->name('userListRender');
 Route::post('/list', [ListController::class, 'listProperty'] )->name('listProperty');
 
-//Find your property
-Route::get('/find', [FindController::class, 'userFindRender'] )->name('userFindRender');
-
-//Image upload
-// Route::get('image-upload', [ ImageUploadController::class, 'imageUpload' ])->name('image.upload');
-// Route::post('image-upload', [ ImageUploadController::class, 'imageUploadPost' ])->name('image.upload.post');
+//My properties
+Route::get('/myProperties', [myPropertiesController::class, 'usermyPropertiesRender'] )->name('usermyPropertiesRender');
 
 
 //Admin {
@@ -54,3 +51,7 @@ Route::get('/find', [FindController::class, 'userFindRender'] )->name('userFindR
 
 // }
 
+
+//Image upload
+// Route::get('image-upload', [ ImageUploadController::class, 'imageUpload' ])->name('image.upload');
+// Route::post('image-upload', [ ImageUploadController::class, 'imageUploadPost' ])->name('image.upload.post');
