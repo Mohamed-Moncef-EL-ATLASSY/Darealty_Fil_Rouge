@@ -18,9 +18,11 @@
                         <div class="form-group col-sm-6 flex-column d-flex">
                             <label class="form-control-label px-3">Estate type</label>
                             <select class="form-control" id="estate_type" name="estate_type">
-                                <option>estate: option 1</option>
-                                <option>estate: option 2</option>
+                                <option>type: option 1</option>
+                                <option>type: option 2</option>
                             </select>
+
+
                             @error('estate_type')
                             <div class="badge badge-danger bg-danger mt-3">
                                 {{ $message }}
@@ -31,6 +33,9 @@
                         <div class="form-group col-sm-6 flex-column d-flex">
                             <label class="form-control-label px-3">City</label>
                             <select class="form-control" id="estate_city" name="estate_city">
+                            {{-- @foreach($cities as $city)
+                                    <option value="{{$city->id}}">{{$city->region}}</option>
+                                @endforeach --}}
                                 <option>city: option 1</option>
                                 <option>city: option 2</option>
                             </select>
@@ -138,7 +143,7 @@
                             <button onclick="history.back()" class=" btn-danger col-12 mx-2">Cancel</button>
                         </div>
                         <div class="form-group col-7">
-                            <button type="submit" class="btn-success col-12 mx-2">Publish property</button>
+                            <button type="submit" class="btn btn-success col-12 mx-2">Publish property</button>
                         </div>
                     </div>
                 </form>

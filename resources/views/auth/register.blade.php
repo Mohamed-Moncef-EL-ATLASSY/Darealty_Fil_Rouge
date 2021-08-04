@@ -35,6 +35,16 @@
                             @enderror
                         </div>
 
+
+                        <div class="form-group mb-3">
+                            <input id="phone" name="phone" type="text" placeholder="Phone Number" autofocus="" class="form-control border-2 shadow-sm px-4 @error('phone') border border-danger @enderror" value="{{ old('phone') }}">
+                            @error('phone')
+                                <div class="badge badge-danger bg-danger mt-3">
+                                    {{ $message }}
+                                </div>
+                            @enderror
+                        </div>
+
                         <div class="form-group mb-3">
                             <input id="password" name="password" type="password" placeholder="Password" class="form-control border-2 shadow-sm px-4 @error('password') border border-danger @enderror">
                             @error('password')

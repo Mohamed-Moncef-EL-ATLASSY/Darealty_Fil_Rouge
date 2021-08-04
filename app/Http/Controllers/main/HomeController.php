@@ -2,13 +2,18 @@
 
 namespace App\Http\Controllers\main;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\Controller;
+use App\Models\Listing;
 
 class HomeController extends Controller
 {
     public function userHomeRender(){
-        return view('main.home');
+        $listings = Listing::get();
+        return view('main.home', [
+            'listings' => $listings
+        ]);
     }
-    
+
 }

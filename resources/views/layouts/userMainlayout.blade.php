@@ -55,7 +55,7 @@
 
                     @auth
                     <div class="d-flex justify-content-around">
-                        <li><a href="" class="p-3 text-dark fs-4">Hello, {{auth()->user()->name}}!</a></li>
+                        <li><a href="" style="cursor: default;" class="p-3 text-dark fs-4">Hello, {{auth()->user()->name}}!</a></li>
                         <a href="{{ route('userLogout') }}" class="btn btn-danger">Log Out</a>
                     </div>
                     @endauth

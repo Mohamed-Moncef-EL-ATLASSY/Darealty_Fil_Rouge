@@ -11,9 +11,9 @@ use Symfony\Component\Console\Input\Input;
 
 class AdminAuthController extends Controller
 {
-    public function __construct() {
-        $this->middleware(['guest']);
-    }
+    // public function __construct() {
+    //     $this->middleware(['guest']);
+    // }
 
     public function adminRenderLogin() {
         return view('admin.auth.login');
@@ -22,6 +22,10 @@ class AdminAuthController extends Controller
     public function adminRenderRegister() {
         return view('admin.auth.register');
     }
+
+    // public function admin() {
+    //     return $this->hasMany(Admin::class);
+    // }
 
     public function adminLogin(Request $request) {
         $request->validate([

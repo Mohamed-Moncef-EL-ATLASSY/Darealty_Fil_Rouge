@@ -22,6 +22,7 @@ class UserAuthController extends Controller {
         $this->validate($request, [
             'name'      => 'required|min:3|max:255',
             'email'     => 'required|email|unique:users,email',
+            'phone'     => 'required|numeric|min:10',
             'password'  => 'required|confirmed',
         ]);
 
@@ -29,6 +30,7 @@ class UserAuthController extends Controller {
         User::create([
             'name'     => $request->name,
             'email'    => $request->email,
+            'phone'    => $request->phone,
             'password' => Hash::make($request->password),
         ]);
 
