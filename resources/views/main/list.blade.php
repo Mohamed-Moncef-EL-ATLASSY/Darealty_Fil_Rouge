@@ -4,7 +4,7 @@
 @section('content')
 
 
-<div class="container-fluid px-1 py-5 mx-auto">
+<div class="container-fluid px-1 py-3 mx-auto">
     <div class="row d-flex justify-content-center">
         <div class="col-xl-7 col-lg-8 col-md-9 col-11">
             <h3 class="text-center">Start listing your property</h3>
@@ -90,7 +90,7 @@
 
                     <div class="row justify-content-between mt-3">
                         <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Property title:</label>
-                            <input type="text" id="estate_title" name="estate_title" value="{{ old('estate_title') }} " placeholder="Property title">
+                            <input type="text" id="estate_title" name="estate_title" value="{{ old('estate_title') }}" placeholder="Property title">
                             @error('estate_title')
                             <div class="badge badge-danger bg-danger mt-3">
                                 {{ $message }}
