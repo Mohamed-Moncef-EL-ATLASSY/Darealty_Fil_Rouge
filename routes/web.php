@@ -1,14 +1,16 @@
 <?php
 
-use App\Http\Controllers\auth\UserAuthController;
-use App\Http\Controllers\admin\auth\AdminAuthController;
-use App\Http\Controllers\admin\adminMain\DashboardController;
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\main\FindController;
 use App\Http\Controllers\main\HomeController;
 use App\Http\Controllers\main\ListController;
+use App\Http\Controllers\auth\UserAuthController;
 use App\Http\Controllers\main\myPropertiesController;
-use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\admin\auth\AdminAuthController;
+use App\Http\Controllers\admin\adminMain\DashboardController;
+use App\Http\Controllers\admin\adminMain\estateslistController;
+use App\Http\Controllers\admin\adminMain\userslistController;
+use GuzzleHttp\Middleware;
 
 //Home page
 Route::get('/', [HomeController::class, 'userHomeRender'] )->name('userHomeRender');
@@ -43,6 +45,13 @@ Route::get('/myProperties', [myPropertiesController::class, 'usermyPropertiesRen
 
     //Dashboard
     Route::get('/admin/dashboard', [DashboardController::class, 'adminDashboardRender'] )->name('adminDashboardRender');
+
+    //Users List
+    Route::get('/admin/Users-List', [userslistController::class, 'adminUsersListRender'] )->name('adminUsersListRender');
+
+
+    //Estates List
+    Route::get('/admin/Estates-List', [estateslistController::class, 'adminEstatesListRender'] )->name('adminEstatesListRender');
 
 
 // Route::get('/admin/register', [AdminAuthController::class, 'adminRenderRegister'] )->name('admin.register');

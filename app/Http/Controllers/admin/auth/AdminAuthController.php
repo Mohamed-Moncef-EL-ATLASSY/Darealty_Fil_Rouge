@@ -51,7 +51,7 @@ class AdminAuthController extends Controller
 
         auth()->logout();
 
-        return redirect()->route('userLoginRender');
+        return redirect()->route('adminLoginRender');
     }
 
 }

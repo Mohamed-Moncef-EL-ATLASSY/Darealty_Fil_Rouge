@@ -11,9 +11,9 @@ use App\Http\Controllers\Controller;
 
 class ListController extends Controller
 {
-    // public function __construct(){
-    //     $this->middleware(['users']);
-    // }
+    public function __construct(){
+        $this->middleware(['auth']);
+    }
 
 
     public function userListRender(){

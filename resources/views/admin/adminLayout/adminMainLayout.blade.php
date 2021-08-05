@@ -25,12 +25,47 @@
                     <img src="{{ URL::asset('images/logo.png') }}" alt="Darealty" width="75" height="75"> </a>
                 </a>
 
-                {{-- @auth
-                <div class="d-flex justify-content-around">
-                    <li><a href="" class="p-3 text-dark fs-4">Hello, {{auth()->user()->name}}!</a></li>
-                    <a href="{{ route('adminLogout') }}" class="btn btn-danger">Log Out</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+                aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse text-center" id="navbarCollapse">
+                    <ul class="navbar-nav me-auto mb-2 mb-md-0">
+
+                        {{-- @auth --}}
+                        @if ($admin)
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="{{ route ('adminUsersListRender') }}">All users</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="{{ route ('adminEstatesListRender') }}">Listed estates</a>
+                        </li>
+                        @endif
+
+                        {{-- @endauth --}}
+
+                    </ul>
+
+                    <div class="d-flex justify-content-around">
+                        {{-- <li><a href="" style="cursor: default;" class="p-3 text-dark fs-4">Hello, {{admin->name}}!</a></li> --}}
+                        <a href="{{ route('adminLogout') }}" class="btn btn-danger">Log Out</a>
+                    </div>
+
+                    {{-- @auth
+                    <div class="d-flex justify-content-around">
+                        <li><a href="" style="cursor: default;" class="p-3 text-dark fs-4">Hello, {{auth()->user()->name}}!</a></li>
+                        <a href="{{ route('userLogout') }}" class="btn btn-danger">Log Out</a>
+                    </div>
+                    @endauth --}}
+
+
+                    {{-- @guest
+                    <a href=" {{route('userLoginRender')  }}" class="btn btn-warning mx-2">Log In</a>
+                    <a href=" {{route('userRegisterRender')  }}" class="btn btn-info mx-2">Register</a>
+                    @endguest --}}
+
+
                 </div>
-                @endauth --}}
 
             </div>
         </nav>

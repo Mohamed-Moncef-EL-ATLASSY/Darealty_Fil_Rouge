@@ -47,10 +47,6 @@
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="{{ route ('usermyPropertiesRender') }}">My properties</a>
                         </li>
-
-                        {{-- <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="{{ route ('usermyPropertiesRender') }}">My properties</a>
-                        </li> --}}
                         @endauth
 
                     </ul>
