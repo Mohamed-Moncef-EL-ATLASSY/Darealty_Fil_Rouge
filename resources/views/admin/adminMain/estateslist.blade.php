@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class="container bg-light">
+<div class="container-fluid bg-light">
     @if ($listings->count())
     <table class="table table-dark table-striped table-hover table-responsive">
         <thead>

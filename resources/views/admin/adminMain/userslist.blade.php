@@ -21,7 +21,7 @@
                 <th scope="row">{{ $user->id }}</th>
                 <td>{{ $user->name }}</td>
                 <td>{{ $user->email }}</td>
-                <td>+212 {{ $user->phone }}</td>
+                <td>+212-{{ $user->phone }}</td>
                 <td>Update</td>
                 <td>Delete</td>
             </tr>

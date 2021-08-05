@@ -2,16 +2,21 @@
 
 namespace App\Http\Controllers\main;
 
-use App\Http\Controllers\Controller;
+use App\Models\Listing;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class myPropertiesController extends Controller
 {
     public function __construct(){
         $this->middleware(['auth']);
     }
-    
+
     public function usermyPropertiesRender(){
-        return view('main.myProperties');
+        $listings = Listing::paginate(5);
+
+        return view('main.myProperties', [
+            'listings' => $listings
+        ]);
     }
 }

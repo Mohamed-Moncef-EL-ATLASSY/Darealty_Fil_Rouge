@@ -3,7 +3,6 @@
 @section('content')
 
 <div class="bg-light">
-
     <div class="explore_recent">
         <h4 class="">Explore recent listed properties</h4>
         @if ($listings->count())
