@@ -12,10 +12,6 @@ class userslistController extends Controller
     public function adminUsersListRender() {
         $admin = DB::table('admin');
         $users = DB::table('users');
-        $listing = DB::table('listing');
-
-
-        // dd($users->count());
 
         $users = User::get();
 
@@ -24,7 +20,6 @@ class userslistController extends Controller
         return view('admin.adminMain.userslist', [
             'admin' => $admin,
             'users' => $users,
-            'listing' => $listing,
         ]);
     }
 }
