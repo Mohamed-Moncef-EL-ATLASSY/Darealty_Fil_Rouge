@@ -3,7 +3,7 @@
 @section('content')
 <div class="bg-light">
     <h4>My Properties</h4>
-        <div class="my_Properties  row row-cols-1 row-cols-md-2 mx-2 g-2">
+        <div class="my_Properties row row-cols-1 row-cols-md-2 mx-2">
         @if ($listings->count())
         @foreach ($listings as $listing)
         <div class="card">
@@ -43,10 +43,10 @@
             </div>
         </div>
         @endforeach
-        <div class="pagination justify-content-center">
-            {{ $listings->links() }}
-        </div>
         @endif
+    </div>
+    <div class="pagination mt-3 justify-content-center">
+        {{ $listings->links() }}
     </div>
 </div>
 

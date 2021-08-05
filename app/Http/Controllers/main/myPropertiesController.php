@@ -13,7 +13,7 @@ class myPropertiesController extends Controller
     }
 
     public function usermyPropertiesRender(){
-        $listings = Listing::paginate(5);
+        $listings = Listing::paginate(8);
 
         return view('main.myProperties', [
             'listings' => $listings
