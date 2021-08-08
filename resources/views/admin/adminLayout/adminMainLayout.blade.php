@@ -33,14 +33,14 @@
                     <ul class="navbar-nav me-auto mb-2 mb-md-0">
 
                         {{-- @auth --}}
-                        @if ($admin)
+                        {{-- @if ($admin) --}}
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="{{ route ('adminUsersListRender') }}">All users</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="{{ route ('adminEstatesListRender') }}">Listed estates</a>
                         </li>
-                        @endif
+                        {{-- @endif --}}
 
                         {{-- @endauth --}}
 

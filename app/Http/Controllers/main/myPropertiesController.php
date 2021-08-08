@@ -12,11 +12,19 @@ class myPropertiesController extends Controller
         $this->middleware(['auth']);
     }
 
+    public function propertyBy(){
+        return $this->user->contains('user_id', $user->id);
+    }
+
     public function usermyPropertiesRender(){
         $listings = Listing::paginate(8);
 
         return view('main.myProperties', [
             'listings' => $listings
         ]);
+    }
+
+    public function user() {
+        return $this->hasMany(Listing::class);
     }
 }

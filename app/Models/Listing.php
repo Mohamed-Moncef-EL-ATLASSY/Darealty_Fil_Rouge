@@ -10,6 +10,7 @@ class Listing extends Model
 {
     use HasFactory;
 
+
     protected $fillable = [
         'estate_type',
         'estate_city',

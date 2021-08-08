@@ -10,7 +10,7 @@
             <h3 class="text-center">Start listing your property</h3>
             <div class="card">
 
-                <form action="{{ route('listProperty') }}" method="post">
+                <form action="{{ route('listProperty') }}" method="post" >
                     @csrf
                     <h4 class=" mb-4">General informations</h4>
 
@@ -112,7 +112,7 @@
                         <div class="col-md-12 col-lg-12 col-12">
                             <div class="form-group files">
                                 <label class="form-control-label px-3">Upload your property picture</label>
-                                <input type="file" id="estate_thumbnail" name="estate_thumbnail" class="form-control" accept="image/*">
+                                <input type="file" id="estate_thumbnail" name="estate_thumbnail" class="form-control">
                                 @error('estate_thumbnail')
                                 <div class="badge badge-danger bg-danger mt-3">
                                     {{ $message }}

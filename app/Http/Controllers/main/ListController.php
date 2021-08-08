@@ -41,7 +41,7 @@ class ListController extends Controller
             'estate_age'         => 'required',
             'estate_title'       => 'required',
             'estate_price'       => 'required',
-            'estate_thumbnail'   => 'required',
+            'estate_thumbnail'   => 'required|mimes:jpeg,png,jpg|max:2048',
             'estate_description' => 'required',
         ]);
 
@@ -58,7 +58,41 @@ class ListController extends Controller
             'estate_description' => $request->estate_description,
         ]);
 
-        return redirect()->route('userHomeRender');
+        return redirect()->route('usermyPropertiesRender');
     }
+
+    // public function store(Request $request)
+    // {
+
+    //     $request->validate([
+    //         'title'=>'required',
+    //         'category'=>'required',
+    //         'detail'=>'required',
+    //     ]);
+    //     // Post Full Image
+    //     if($request->hasFile('post_image')){
+    //         $image2=$request->file('post_image');
+    //         $reFullImage=time().'.'.$image2->getClientOriginalExtension();
+    //         $dest2=public_path('/imgs/full');
+    //         $image2->move($dest2,$reFullImage);
+    //     }else{
+    //         $reFullImage='na';
+    //     }
+
+    //     $post=new Post;
+    //     $post->user_id=0;
+    //     $post->cat_id=$request->category;
+    //     $post->title=$request->title;
+    //     $post->thumb=$reThumbImage;
+    //     $post->full_img=$reFullImage;
+    //     $post->detail=$request->detail;
+    //     $post->tags=$request->tags;
+    //     $post->save();
+
+    //     return redirect('admin/post/create')->with('success','Data has been added');
+
+    // }
+
+
 }
 
