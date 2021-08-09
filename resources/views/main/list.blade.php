@@ -10,7 +10,7 @@
             <h3 class="text-center">Start listing your property</h3>
             <div class="card">
 
-                <form action="{{ route('listProperty') }}" method="post" >
+                <form action="{{ route('listProperty') }}" method="post" enctype="multipart/form-data">
                     @csrf
                     <h4 class=" mb-4">General informations</h4>
 

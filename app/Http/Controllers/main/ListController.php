@@ -32,6 +32,7 @@ class ListController extends Controller
 
 
     public function listProperty(Request $request) {
+
         $this->validate($request , [
             'estate_type'        => 'required',
             'estate_city'        => 'required',
@@ -45,6 +46,17 @@ class ListController extends Controller
             'estate_description' => 'required',
         ]);
 
+        //Image Upload
+        $getEstateTitle = $request->estate_title; //Get property title
+        $getTimeInSec = time(); //Get current tim in secondes
+        $getCurrentTime = date('Y_m_d°H-i-s',$getTimeInSec); //Get current time in Year-Month-Day Hour:Minutes:Secondes
+        $getExtension = $request->file('estate_thumbnail')->getClientOriginalExtension(); //Get file Extension
+
+        $property_image_upload = $getEstateTitle . '--' . $getCurrentTime . '.' . $getExtension; //Set a new name for the uploaded file(image)
+
+        $request->estate_thumbnail->move(public_path('properties_images'), $property_image_upload);
+
+
         $request->user()->Listings()->create([
             'estate_type'        => $request->estate_type,
             'estate_city'        => $request->estate_city,
@@ -54,45 +66,11 @@ class ListController extends Controller
             'estate_age'         => $request->estate_age,
             'estate_title'       => $request->estate_title,
             'estate_price'       => $request->estate_price,
-            'estate_thumbnail'   => $request->estate_thumbnail,
+            'estate_thumbnail'   => $property_image_upload,
             'estate_description' => $request->estate_description,
         ]);
 
         return redirect()->route('usermyPropertiesRender');
     }
-
-    // public function store(Request $request)
-    // {
-
-    //     $request->validate([
-    //         'title'=>'required',
-    //         'category'=>'required',
-    //         'detail'=>'required',
-    //     ]);
-    //     // Post Full Image
-    //     if($request->hasFile('post_image')){
-    //         $image2=$request->file('post_image');
-    //         $reFullImage=time().'.'.$image2->getClientOriginalExtension();
-    //         $dest2=public_path('/imgs/full');
-    //         $image2->move($dest2,$reFullImage);
-    //     }else{
-    //         $reFullImage='na';
-    //     }
-
-    //     $post=new Post;
-    //     $post->user_id=0;
-    //     $post->cat_id=$request->category;
-    //     $post->title=$request->title;
-    //     $post->thumb=$reThumbImage;
-    //     $post->full_img=$reFullImage;
-    //     $post->detail=$request->detail;
-    //     $post->tags=$request->tags;
-    //     $post->save();
-
-    //     return redirect('admin/post/create')->with('success','Data has been added');
-
-    // }
-
-
 }
 

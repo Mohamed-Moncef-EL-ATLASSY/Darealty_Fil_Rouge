@@ -10,7 +10,7 @@
         <div class="card m-3">
             <div class="row g-0 m-2">
                 <div class="col-md-12 col-lg-2 col-12">
-                    <img src="..." class="img-fluid rounded-start">
+                    <img src="{{ asset('properties_images/'. $listing->estate_thumbnail ) }}" class="img-fluid rounded-start">
                 </div>
                 <div class="col-md-12 col-lg-8 col-12">
                     <div class="card-body">
