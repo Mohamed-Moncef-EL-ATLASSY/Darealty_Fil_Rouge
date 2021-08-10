@@ -6,7 +6,7 @@
     @if ($users->count())
     <table class="table table-dark table-striped table-hover table-responsive">
         <thead>
-            <tr>
+            <tr class="text-center">
                 <th scope="col">User Id</th>
                 <th scope="col">Name</th>
                 <th scope="col">Email</th>
@@ -17,13 +17,13 @@
         </thead>
         <tbody>
             @foreach ($users as $user)
-            <tr>
+            <tr class="text-center">
                 <th scope="row">{{ $user->id }}</th>
                 <td>{{ $user->name }}</td>
                 <td>{{ $user->email }}</td>
                 <td>+212-{{ $user->phone }}</td>
-                <td>Update</td>
-                <td>Delete</td>
+                <td><a href="{{ "Users-List/update/" . $user->id }}" class="btn btn-warning col-6">Update <i class="fas fa-edit"></i></a></td>
+                <td><a href="{{ "Users-List/delete/" . $user->id }}" class="btn btn-danger col-6">Delete <i class="fas fa-trash-alt"></i></a></td>
             </tr>
             @endforeach
         </tbody>

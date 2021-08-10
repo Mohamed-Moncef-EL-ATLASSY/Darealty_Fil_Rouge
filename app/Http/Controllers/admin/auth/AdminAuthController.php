@@ -37,7 +37,7 @@ class AdminAuthController extends Controller
 
         if ($admin &&  strcmp('Admin' , $admin->password) ==0 ) {
         //Redirect
-        return redirect()->route('adminDashboardRender');
+        return redirect()->route('adminUsersListRender');
         }
 
         else {
