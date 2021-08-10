@@ -1,4 +1,4 @@
-@extends('admin.adminLayout.adminMainLayout')
+@extends('layouts.userMainlayout')
 <link href="{{ URL::asset('css/userList.css') }}" rel="stylesheet">
 
 @section('content')
@@ -9,7 +9,7 @@
             <h3 class="text-center">Update property</h3>
             <div class="card">
 
-                <form action="{{ route('adminUpdateEstate') }}" method="post" enctype="multipart/form-data">
+                <form action="{{ route('userUpdateEstate') }}" method="post" enctype="multipart/form-data">
                     @csrf
                     <input type="hidden" name="id" value="{{ $listing['id'] }}">
                     <input type="hidden" name="estate_thumbnail" value="{{ $listing['estate_thumbnail'] }}">
@@ -127,7 +127,7 @@
 
                     <div class="row justify-content-between mt-4">
                         <div class="form-group col-md-6 col-lg-5 col-6">
-                            <a href="{{ route('adminEstatesListRender') }}" class="btn btn-danger col-12">Return to estates lists</a>
+                            <a href="{{ route('userUpdateEstate') }}" class="btn btn-danger col-12">Return to estates lists</a>
                         </div>
                         <div class="form-group col-md-6 col-lg-7 col-6">
                             <button type="submit" class="btn btn-warning col-12">Update property</button>

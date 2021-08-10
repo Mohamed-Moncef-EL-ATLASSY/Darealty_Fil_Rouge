@@ -9,7 +9,7 @@
         <div class="card">
             <div class="row g-0 m-2">
                 <div class="col-md-12 col-lg-3 col-12">
-                    <img src="{{ asset('properties_images/'. $listing->estate_thumbnail ) }}" class="img-fluid rounded-start" width="400" height="400">
+                    <img src="{{ asset('properties_images/'. $listing->estate_thumbnail ) }}" class="img-fluid rounded-start" style="height: 100%; object-fit: contain;">
                 </div>
                 <div class="col-md-12 col-lg-5 col-12">
                     <div class="card-body">
@@ -36,8 +36,8 @@
                             <b>{{ number_format($listing->estate_price, 0, ",", ".") . " MAD" }}</b></h4>
                             <div class="py-2 d-grid gap-2">
                                 <button type="submit" class="btn btn-success col-12">View Estate <i class="fas fa-angle-double-right"></i></button>
-                                <button type="submit" class="btn btn-warning col-12">Update <i class="fas fa-edit"></i></button>
-                                <button type="submit" class="btn btn-danger col-12">Delete <i class="fas fa-trash-alt"></i></button>
+                                <a href="{{ "/myProperties/update/" . $listing->id }}" class="btn btn-warning col-12">Update <i class="fas fa-edit"></i></a>
+                                <a href="{{ "/myProperties/delete/" . $listing->id }}" class="btn btn-danger col-12">Delete <i class="fas fa-trash-alt"></i></a>
                             </div>
                 </div>
             </div>

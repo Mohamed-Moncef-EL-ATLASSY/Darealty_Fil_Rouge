@@ -30,7 +30,9 @@ Route::post('/list', [ListController::class, 'listProperty'] )->name('listProper
 
 //My properties
 Route::get('/myProperties', [myPropertiesController::class, 'usermyPropertiesRender'] )->name('usermyPropertiesRender');
-
+Route::get('/myProperties/update/{id}', [myPropertiesController::class, 'getListing_id'] );
+Route::post('/myProperties/update/', [myPropertiesController::class, 'userUpdateEstate'] )->name('userUpdateEstate');
+Route::get('/myProperties/delete/{id}', [myPropertiesController::class, 'userEstateListDelete'] );
 
 //Admin login
 Route::get('/admin/login', [AdminAuthController::class, 'adminRenderLogin'] )->name('adminLoginRender');
@@ -45,7 +47,7 @@ Route::get('/admin/dashboard', [DashboardController::class, 'adminDashboardRende
 
 //Admin Users List + Update user + Delete user
 Route::get('/admin/Users-List', [userslistController::class, 'adminUsersListRender'] )->name('adminUsersListRender');
-Route::get('/admin/Users-List/update/{id}', [userslistController::class, 'getUser_id'] );
+Route::get('/admin/Users-List/update/{id}', [userslistController::class, 'showUser_id'] );
 Route::post('/admin/Users-List/update/', [userslistController::class, 'adminUpdateUser'] )->name('adminUpdateUser');
 Route::get('/admin/Users-List/delete/{id}', [userslistController::class, 'adminUsersListDelete'] );
 
@@ -54,7 +56,7 @@ Route::get('/admin/Users-List/delete/{id}', [userslistController::class, 'adminU
 Route::get('/admin/Estates-List', [estateslistController::class, 'adminEstatesListRender'] )->name('adminEstatesListRender');
 Route::get('/admin/Estates-List/update/{id}', [estateslistController::class, 'getListing_id'] );
 Route::post('/admin/Estates-List/update/', [estateslistController::class, 'adminUpdateEstate'] )->name('adminUpdateEstate');
-Route::get('/admin/Estates-List/delete/{id}', [estateslistController::class, 'adminEstatesListDelete'] );
+Route::get('/admin/Estates-List/delete/{id}', [estateslistController::class, 'adminEstatsListDelete'] );
 
 
 // Route::get('/admin/register', [AdminAuthController::class, 'adminRenderRegister'] )->name('admin.register');

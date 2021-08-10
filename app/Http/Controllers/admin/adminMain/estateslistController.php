@@ -25,19 +25,20 @@ class estateslistController extends Controller
     }
 
     public function getListing_id($id) {
-        $regions = Region::get();
+        $regions      = Region::get();
         $estate_types = EstateType::get();
 
         $listing = Listing::find($id);
         return view('admin.adminMain.update.updateEstate', [
-            'listing' => $listing,
-            'regions' => $regions,
+            'listing'     => $listing,
+            'regions'     => $regions,
             'estate_type' => $estate_types,
         ]);
     }
 
     public function adminUpdateEstate(Request $request) {
         $listing = Listing::find($request->id);
+
         $listing->estate_age         = $request->estate_age;
         $listing->estate_bathrooms   = $request->estate_bathrooms;
         $listing->estate_bedrooms    = $request->estate_bedrooms;
@@ -48,12 +49,13 @@ class estateslistController extends Controller
         $listing->estate_thumbnail   = $request->estate_thumbnail;
         $listing->estate_title       = $request->estate_title;
         $listing->estate_type        = $request->estate_type;
+
         $listing->save();
         return redirect()->route('adminEstatesListRender');
     }
 
 
-    public function adminEstatesListDelete($id) {
+    public function adminEstateListDelete($id) {
         $deleteListingById = Listing::find($id);
         $deleteListingById->delete();
         return redirect()->route('adminEstatesListRender');

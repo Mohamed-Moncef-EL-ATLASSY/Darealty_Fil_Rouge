@@ -28,10 +28,16 @@ class userslistController extends Controller
         ]);
     }
 
-    public function adminUsersListUpdate($id) {
-        $updateUserById = User::find($id);
-        // $updateUserById->
-        // return redirect()->route('adminUsersListRender');
+    public function adminUpdateUser(Request $request) {
+        $user = User::find($request->id);
+
+        $user->name     = $request->name;
+        $user->email    = $request->email;
+        $user->phone    = $request->phone;
+        $user->password = $request->password;
+
+        $user->save();
+        return redirect()->route('adminUsersListRender');
     }
 
     public function adminUsersListDelete($id) {
