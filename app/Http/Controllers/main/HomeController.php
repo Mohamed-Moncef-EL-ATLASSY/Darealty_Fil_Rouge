@@ -11,7 +11,7 @@ use App\Models\Listing;
 class HomeController extends Controller {
 
     public function userHomeRender(){
-        $listings = Listing::paginate(5);
+        $listings = Listing::latest()->paginate(5);
 
         return view('main.home', [
             'listings' => $listings

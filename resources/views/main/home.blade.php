@@ -1,10 +1,44 @@
 @extends('layouts.userMainlayout')
+<link href="{{ URL::asset('css/userHome.css') }}" rel="stylesheet">
 
 @section('content')
 
 <div class="bg-light">
+    <div class="mx-auto d-block col-12 mb-4" >
+        <img src="{{ URL::asset('images/home/Provincial-Moving-Banner-Nov202019-copy.jpg') }}" class="img-fluid rounded mx-auto d-block" alt="Home">
+    </div>
+
+    <div class="row row-cols-1 row-cols-md-3 g-4 mb-3 mx-3">
+        <div class="col col-md-4 col-lg-4 col-12">
+            <div class="card">
+                <div class="card-body card-find">
+                    <h5 class="card-title">Find your next property</h5>
+                    <p class="card-text">Here you can find properties and select within your prefered one!</p>
+                </div>
+            </div>
+        </div>
+        <div class="col col-md-4 col-lg-4 col-12">
+            <div class="card">
+                <div class="card-body card-safe">
+                    <h5 class="card-title">Safe & secure transactions</h5>
+                    <p class="card-text">With our safe & secure payments methods. This is the place for you!</p>
+                </div>
+            </div>
+        </div>
+        <div class="col col-md-4 col-lg-4 col-12">
+            <div class="card">
+                <div class="card-body card-get">
+                    <h5 class="card-title">Get your keys</h5>
+                    <p class="card-text">You will get your keys within no times! mesmerizing, isnt it?</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
     <div class="explore_recent">
-        <h4 class="">Explore recent listed properties</h4>
+        <h4 class="mx-3">Explore recent listed properties</h4>
         @if ($listings->count())
         @foreach ($listings as $listing)
         <div class="card m-3">
@@ -28,7 +62,7 @@
 
                         <small class="text-muted">Realtor</small>
                         <p class="m-1">{{ $listing->user->name }} </p>
-                        <p class="m-1 text-muted">(+212) {{ $listing->user->phone }}</p>
+                        <p class="m-1 text-muted">(+212){{ $listing->user->phone }}</p>
 
                     </div>
                 </div>

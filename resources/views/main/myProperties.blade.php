@@ -2,13 +2,13 @@
 
 @section('content')
 <div class="bg-light">
-    <h4>My Properties</h4>
+    <h4 class="m-3" >My Properties</h4>
         <div class="my_Properties row row-cols-1 row-cols-md-2 mx-2">
         @if ($listings->count())
         @foreach ($listings as $listing)
-        <div class="card">
+        <div class="card ">
             <div class="row g-0 m-2">
-                <div class="col-md-12 col-lg-3 col-12">
+                <div class="col-md-12 col-lg-4 col-12">
                     <img src="{{ asset('properties_images/'. $listing->estate_thumbnail ) }}" class="img-fluid rounded-start" style="height: 100%; object-fit: contain;">
                 </div>
                 <div class="col-md-12 col-lg-5 col-12">
@@ -27,11 +27,11 @@
 
                         <small class="text-muted">Realtor</small>
                         <p class="m-1">{{ $listing->user->name }} </p>
-                        <p class="m-1 text-muted">(+212) {{ $listing->user->phone }}</p>
+                        <p class="m-1 text-muted">(+212){{ $listing->user->phone }}</p>
 
                     </div>
                 </div>
-                <div class="col-md-12 col-lg-4 col-12 d-flex flex-column justify-content-between">
+                <div class="col-md-12 col-lg-3 col-12 d-flex flex-column justify-content-between">
                         <h4 class="text-dark text-center mx-4 mt-2 col-lg-10">
                             <b>{{ number_format($listing->estate_price, 0, ",", ".") . " MAD" }}</b></h4>
                             <div class="py-2 d-grid gap-2">
