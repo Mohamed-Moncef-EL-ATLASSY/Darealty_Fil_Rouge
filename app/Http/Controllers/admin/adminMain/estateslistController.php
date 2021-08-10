@@ -12,7 +12,6 @@ use App\Http\Controllers\Controller;
 class estateslistController extends Controller
 {
     public function adminEstatesListRender() {
-
         $admin = DB::table('admin');
         $listings = DB::table('listings');
 

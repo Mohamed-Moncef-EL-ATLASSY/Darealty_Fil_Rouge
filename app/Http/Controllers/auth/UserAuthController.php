@@ -59,7 +59,6 @@ class UserAuthController extends Controller {
     public function userLogout() {
 
         auth()->logout();
-
         return redirect()->route('userLoginRender');
     }
 }

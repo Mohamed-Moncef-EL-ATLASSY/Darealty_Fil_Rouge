@@ -35,7 +35,6 @@
                 <div class="col-md-12 col-lg-3 col-12 d-flex flex-column justify-content-around">
                         <h4 class="text-dark text-center mx-5 mt-2">
                             <b>{{ number_format($listing->estate_price, 0, ",", ".") . " MAD" }}</b></h4>
-
                         <button type="submit" class="btn btn-success col-12">View Estate <i class="fas fa-angle-double-right"></i></button>
                 </div>
             </div>

@@ -4,17 +4,10 @@ namespace App\Http\Controllers\admin\auth;
 
 use App\Models\Admin;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Hash;
-use Symfony\Component\Console\Input\Input;
 
-class AdminAuthController extends Controller
-{
-    // public function __construct() {
-    //     $this->middleware(['guest']);
-    // }
 
+class AdminAuthController extends Controller {
     public function adminRenderLogin() {
         return view('admin.auth.login');
     }
@@ -22,10 +15,6 @@ class AdminAuthController extends Controller
     public function adminRenderRegister() {
         return view('admin.auth.register');
     }
-
-    // public function admin() {
-    //     return $this->hasMany(Admin::class);
-    // }
 
     public function adminLogin(Request $request) {
         $request->validate([
@@ -48,9 +37,7 @@ class AdminAuthController extends Controller
     }
 
     public function adminLogout() {
-
         auth()->logout();
-
         return redirect()->route('adminLoginRender');
     }
 

@@ -22,8 +22,8 @@
                 <td>{{ $user->name }}</td>
                 <td>{{ $user->email }}</td>
                 <td>+212-{{ $user->phone }}</td>
-                <td><a href="{{ "Users-List/update/" . $user->id }}" class="btn btn-warning col-6">Update <i class="fas fa-edit"></i></a></td>
-                <td><a href="{{ "Users-List/delete/" . $user->id }}" class="btn btn-danger col-6">Delete <i class="fas fa-trash-alt"></i></a></td>
+                <td><a href="{{ "Users-List/update/" . $user->id }}" class="btn btn-warning col-12">Update <i class="fas fa-edit"></i></a></td>
+                <td><a href="{{ "Users-List/delete/" . $user->id }}" class="btn btn-danger col-12">Delete <i class="fas fa-trash-alt"></i></a></td>
             </tr>
             @endforeach
         </tbody>

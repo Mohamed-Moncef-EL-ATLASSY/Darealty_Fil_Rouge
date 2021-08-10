@@ -130,7 +130,7 @@
                             <a href="{{ route('userUpdateEstate') }}" class="btn btn-danger col-12">Return to estates lists</a>
                         </div>
                         <div class="form-group col-md-6 col-lg-7 col-6">
-                            <button type="submit" class="btn btn-warning col-12">Update property</button>
+                            <button type="submit" class="btn btn-warning col-12">Update property <i class="fas fa-edit"></i></button>
                         </div>
                     </div>
                 </form>

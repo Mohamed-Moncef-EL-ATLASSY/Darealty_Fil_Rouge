@@ -26,7 +26,7 @@
 
         <nav class="navbar navbar-expand-md navbar-light fixed-top bg-white">
             <div class="container-fluid">
-                <a href="#" class="navbar-brand d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+                <a href="{{ route ('userHomeRender') }}" class="navbar-brand d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
                     <img src="{{ URL::asset('images/logo.png') }}" alt="Darealty" width="75" height="75"> </a>
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
@@ -36,8 +36,7 @@
                 <div class="collapse navbar-collapse text-center" id="navbarCollapse">
                     <ul class="navbar-nav me-auto mb-2 mb-md-0">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page"
-                                href="{{ route ('userHomeRender') }}">Home</a>
+                            <a class="nav-link active" aria-current="page" href="{{ route ('userHomeRender') }}">Home</a>
                         </li>
 
                         @auth
@@ -53,15 +52,15 @@
 
                     @auth
                     <div class="d-flex justify-content-around">
-                        <li><a href="" style="cursor: default;" class="p-3 text-dark fs-4">Hello, {{auth()->user()->name}}!</a></li>
-                        <a href="{{ route('userLogout') }}" class="btn btn-danger">Log Out</a>
+                        <li><a href="#" style="cursor: default;" class="p-3 text-dark fs-4">Hello, {{auth()->user()->name}}!</a></li>
+                        <a href="{{ route('userLogout') }}" class="btn btn-danger">Log Out  <i class="fas fa-sign-out-alt"></i></a>
                     </div>
                     @endauth
 
 
                     @guest
-                    <a href=" {{route('userLoginRender')  }}" class="btn btn-warning mx-2">Log In</a>
-                    <a href=" {{route('userRegisterRender')  }}" class="btn btn-info mx-2">Register</a>
+                    <a href=" {{route('userLoginRender')  }}" class="btn btn-success mx-2">Log In <i class="fas fa-angle-double-right"></i></a>
+                    <a href=" {{route('userRegisterRender')  }}" class="btn btn-dark mx-2">Register <i class="fas fa-edit"></i></a>
                     @endguest
 
 

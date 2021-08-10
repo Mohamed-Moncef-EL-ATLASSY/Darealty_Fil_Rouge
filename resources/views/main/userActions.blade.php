@@ -1,11 +1,11 @@
-@extends('admin.adminLayout.adminMainLayout')
+@extends('layouts.userMainlayout')
 
 
 @section('content')
 
 <div class="container">
     <h2>Update User</h2>
-    <form action="{{ route('adminUpdateUser') }}" method="post">
+    <form action="#" method="post">
         @csrf
         <input type="hidden" name="id" value="{{ $user['id'] }}">
         <input type="hidden" name="password" value="{{ $user['password'] }}">
@@ -26,7 +26,7 @@
                 <a href="{{ route('adminUsersListRender') }}" class="btn btn-danger col-12">Return to users lists</a>
             </div>
             <div class="form-group col-md-6 col-lg-7 col-6 mb-4">
-                <button type="submit" class="btn btn-warning col-12">Update user <i class="fas fa-edit"></i></button>
+                <button type="submit" class="btn btn-warning col-12">Update user</button>
             </div>
         </div>
     </form>

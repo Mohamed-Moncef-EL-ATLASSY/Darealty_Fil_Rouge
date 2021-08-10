@@ -9,6 +9,7 @@ use App\Http\Controllers\admin\auth\AdminAuthController;
 use App\Http\Controllers\admin\adminMain\DashboardController;
 use App\Http\Controllers\admin\adminMain\estateslistController;
 use App\Http\Controllers\admin\adminMain\userslistController;
+use App\Http\Controllers\main\usersActions;
 
 //Home page
 Route::get('/', [HomeController::class, 'userHomeRender'] )->name('userHomeRender');
@@ -27,6 +28,14 @@ Route::get('/logout', [UserAuthController::class, 'userLogout'] )->name('userLog
 //List your property
 Route::get('/list', [ListController::class, 'userListRender'] )->name('userListRender');
 Route::post('/list', [ListController::class, 'listProperty'] )->name('listProperty');
+
+//Edit User
+// Route::get('/user/{id}', [usersActions::class, 'UserActionRender'] )->name('UserActionRender');
+// Route::get('/user/update/{id}', [usersActions::class, 'showUser_id'] );
+// Route::post('/user/update/', [usersActions::class, 'userUpdate'] )->name('userUpdate');
+// Route::get('/user/delete/{id}', [usersActions::class, 'userDelete'] );
+
+
 
 //My properties
 Route::get('/myProperties', [myPropertiesController::class, 'usermyPropertiesRender'] )->name('usermyPropertiesRender');
@@ -61,11 +70,3 @@ Route::get('/admin/Estates-List/delete/{id}', [estateslistController::class, 'ad
 
 // Route::get('/admin/register', [AdminAuthController::class, 'adminRenderRegister'] )->name('admin.register');
 // Route::post('/admin/register', [AdminAuthController::class, 'AdminRegister'] )->name('admin.register');
-
-
-// }
-
-
-//Image upload
-// Route::get('image-upload', [ ImageUploadController::class, 'imageUpload' ])->name('image.upload');
-// Route::post('image-upload', [ ImageUploadController::class, 'imageUploadPost' ])->name('image.upload.post');
