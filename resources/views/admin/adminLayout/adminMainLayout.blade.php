@@ -53,13 +53,13 @@
 
     </header>
 
-<div class="mt-5" style="background-color: rgba(0, 0, 0, 0.05);">
+<div class="mt-5">
 
     @yield('content')
 
 </div>
 
-    <footer class="text-center text-lg-start bg-white text-muted ">
+    {{-- <footer class="text-center text-lg-start bg-white text-muted ">
         <section class="p-4 border-bottom">
         </section>
 
@@ -116,7 +116,7 @@
         </div>
         <!-- Copyright -->
     </footer>
-    <!-- Footer -->
+    <!-- Footer --> --}}
 
 
 </body>

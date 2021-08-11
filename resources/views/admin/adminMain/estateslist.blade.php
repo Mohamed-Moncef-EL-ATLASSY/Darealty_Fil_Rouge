@@ -3,7 +3,8 @@
 @section('content')
 
 <div class="container-fluid bg-light">
-    @if ($listings->count())
+    <h4 class="m-3 p-3 text-center">Total listings: {{ $listings->count() }}  <i class="fas fa-th-list"></i></h4>
+
     <table class="table table-dark table-striped table-hover table-responsive">
         <thead>
             <tr class="text-center">
@@ -21,6 +22,7 @@
             </tr>
         </thead>
         <tbody>
+            @if ($listings->count())
             @foreach ($listings as $listing)
             <tr class="text-center">
                 <th scope="row">{{ $listing->id }}</th>

@@ -4,7 +4,7 @@
 
 
 
-admin Dashboard
+
 
 
 @endsection

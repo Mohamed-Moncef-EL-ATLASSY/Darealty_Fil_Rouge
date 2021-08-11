@@ -2,8 +2,8 @@
 
 @section('content')
 
-<div class="container bg-light">
-    @if ($users->count())
+<div class="container bg-light ">
+    <h4 class="m-3 p-3 text-center">Total users: {{ $users->count() }}  <i class="fas fa-user"></i></h4>
     <table class="table table-dark table-striped table-hover table-responsive">
         <thead>
             <tr class="text-center">
@@ -16,6 +16,7 @@
             </tr>
         </thead>
         <tbody>
+            @if ($users->count())
             @foreach ($users as $user)
             <tr class="text-center">
                 <th scope="row">{{ $user->id }}</th>

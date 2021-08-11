@@ -4,7 +4,7 @@
 @section('content')
 
 <div class="bg-light">
-    <div class="mx-auto d-block col-12 mb-4" >
+    <div class="mx-auto d-block col-10 mb-4" >
         <img src="{{ URL::asset('images/home/Provincial-Moving-Banner-Nov202019-copy.jpg') }}" class="img-fluid rounded mx-auto d-block" alt="Home">
     </div>
 
@@ -28,12 +28,11 @@
         <div class="col col-md-4 col-lg-4 col-12">
             <div class="card">
                 <div class="card-body card-get">
-                    <h5 class="card-title">Get your keys</h5>
-                    <p class="card-text">You will get your keys within no times! mesmerizing, isnt it?</p>
+                    <h5 class="card-title">Get your keys </h5>
+                    <p class="card-text">You will get your keys within no times! mesmerizing, isnt it? </p>
                 </div>
             </div>
         </div>
-
     </div>
 
 
@@ -41,7 +40,7 @@
         <h4 class="mx-3">Explore recent listed properties</h4>
         @if ($listings->count())
         @foreach ($listings as $listing)
-        <div class="card m-3">
+        <div class="card m-3 d-flex justify-content-center">
             <div class="row g-0 m-2">
                 <div class="col-md-12 col-lg-3 col-12">
                     <img src="{{ asset('properties_images/'. $listing->estate_thumbnail ) }}" class="img-fluid rounded-start" style="height: 100%; object-fit: contain;" >
