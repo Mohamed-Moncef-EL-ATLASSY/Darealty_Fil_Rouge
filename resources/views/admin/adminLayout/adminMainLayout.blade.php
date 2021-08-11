@@ -43,7 +43,7 @@
 
                     <div class="d-flex justify-content-around">
                         <li><a href="" style="cursor: default;" class="p-3 text-dark fs-4">Hello, Admin!</a></li>
-                        <a href="{{ route('adminLogout') }}" class="btn btn-danger">Log Out</a>
+                        <a href="{{ route('adminLogout') }}" class="btn btn-danger">Log Out  <i class="fas fa-sign-out-alt"></i></a>
                     </div>
 
                 </div>
