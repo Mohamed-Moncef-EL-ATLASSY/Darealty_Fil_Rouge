@@ -17,18 +17,20 @@ class ListController extends Controller
 
 
     public function userListRender(){
-        $regions = Region::get();
+        $regions      = Region::get();
         $estate_types = EstateType::get();
+        // $listing      = Listing::get();
 
         return view('main.list', [
-            'regions' => $regions,
+            // 'listing'     => $listing,
+            'regions'     => $regions,
             'estate_type' => $estate_types
         ]);
     }
 
-    public function listing(){
-        return $this->belongsTo(Listing::class);
-    }
+    // public function listing(){
+    //     return $this->belongsTo(Listing::class);
+    // }
 
 
     public function listProperty(Request $request) {

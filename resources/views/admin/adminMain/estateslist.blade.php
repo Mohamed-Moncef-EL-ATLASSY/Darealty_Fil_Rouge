@@ -34,8 +34,8 @@
                 <td><i class="fas fa-bed"></i>  {{ $listing->estate_bedrooms }}</td>
                 <td><i class="fas fa-bath"></i>  {{ $listing->estate_bathrooms }}</td>
                 <td><i class="fas fa-arrows-alt"></i>  {{ $listing->estate_surface }}</td>
-                <td class="text-center"><a href="{{ "Estates-List/update/" . $listing->id }}"  class="btn btn-warning col-8">Update <i class="fas fa-edit"></i></a></td>
-                <td class="text-center"><a href="{{ "Estates-List/delete/" . $listing->id }}" class="btn btn-danger col-8">Delete <i class="fas fa-trash-alt"></i></a></td>
+                <td class="text-center"><a href="{{ "Estates-List/update/" . $listing->id }}"  class="btn btn-warning col-12">Update <i class="fas fa-edit"></i></a></td>
+                <td class="text-center"><a href="{{ "Estates-List/delete/" . $listing->id }}" class="btn btn-danger col-12">Delete <i class="fas fa-trash-alt"></i></a></td>
             </tr>
             @endforeach
         </tbody>

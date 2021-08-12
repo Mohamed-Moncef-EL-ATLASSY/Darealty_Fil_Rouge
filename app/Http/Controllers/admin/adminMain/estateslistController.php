@@ -9,8 +9,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 
-class estateslistController extends Controller
-{
+class estateslistController extends Controller {
     public function adminEstatesListRender() {
         $admin = DB::table('admin');
         $listings = DB::table('listings');

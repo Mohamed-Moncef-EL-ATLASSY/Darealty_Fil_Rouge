@@ -24,7 +24,7 @@ class AdminAuthController extends Controller {
 
         $admin = Admin::where(['email' => $request->email])->first();
 
-        if ($admin &&  strcmp('Admin' , $admin->password) ==0 ) {
+        if ($admin &&  strcmp('Admin' , $admin->password) == 0 ) {
         //Redirect
         return redirect()->route('adminUsersListRender');
         }

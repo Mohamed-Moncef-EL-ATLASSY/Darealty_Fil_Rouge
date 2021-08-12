@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\main;
 
+use App\Models\User;
 use App\Models\Region;
 use App\Models\Listing;
 use App\Models\EstateType;
@@ -14,29 +15,19 @@ class myPropertiesController extends Controller
         $this->middleware(['auth']);
     }
 
-    // public function propertyBy(){
-    //     return $this->user->contains('user_id', $user->id);
-    // }
-
-    // public function user() {
-    //     return $this->hasMany(Listing::class);
-    // }
-
     public function usermyPropertiesRender(){
         $listings = Listing::paginate(6);
 
         return view('main.myProperties', [
-            'listings' => $listings
+            'listings' => $listings,
         ]);
     }
-
-
 
     public function getListing_id($id) {
         $regions      = Region::get();
         $estate_types = EstateType::get();
+        $listing      = Listing::find($id);
 
-        $listing = Listing::find($id);
         return view('main.update.updateEstate', [
             'listing'     => $listing,
             'regions'     => $regions,
