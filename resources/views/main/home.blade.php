@@ -4,12 +4,12 @@
 @section('content')
 
 <div class="bg-light">
-    <div class="mx-auto d-block col-10 mb-4" >
+    <div class="mx-auto d-block mb-4 col-md-12 col-lg-10 col-12">
         <img src="{{ URL::asset('images/home/Provincial-Moving-Banner-Nov202019-copy.jpg') }}" class="img-fluid rounded mx-auto d-block" alt="Home">
     </div>
 
-    <div class="row row-cols-1 row-cols-md-3 g-4 mb-3 mx-3">
-        <div class="col col-md-4 col-lg-4 col-12">
+    <div class="row row-cols-12 row-cols-md-3 g-4 mb-3 mx-3 scrolling">
+        <div class="col col-md-4 col-lg-4 col-6">
             <div class="card">
                 <div class="card-body card-find">
                     <h5 class="card-title">Find your next property</h5>
@@ -17,7 +17,7 @@
                 </div>
             </div>
         </div>
-        <div class="col col-md-4 col-lg-4 col-12">
+        <div class="col col-md-4 col-lg-4 col-6">
             <div class="card">
                 <div class="card-body card-safe">
                     <h5 class="card-title">Safe & secure transactions</h5>
