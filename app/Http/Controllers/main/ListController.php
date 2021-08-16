@@ -43,7 +43,7 @@ class ListController extends Controller
             'estate_surface'     => 'required',
             'estate_age'         => 'required',
             'estate_title'       => 'required',
-            'estate_price'       => 'required',
+            'estate_price'       => 'required|numeric',
             'estate_thumbnail'   => 'required|mimes:jpeg,png,jpg|max:2048',
             'estate_description' => 'required',
         ]);
